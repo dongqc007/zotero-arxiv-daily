@@ -177,6 +177,8 @@ Supported by [uv](https://github.com/astral-sh/uv), this workflow can easily run
 # ...
 cd zotero-arxiv-daily
 uv run main.py
+# or
+uv run zotero-arxiv-daily
 ```
 
 ## 🚀 Sync with the latest version
