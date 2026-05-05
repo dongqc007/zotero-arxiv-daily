@@ -1,6 +1,7 @@
 import os
 import sys
 import logging
+from pathlib import Path
 from omegaconf import DictConfig
 import hydra
 from loguru import logger
@@ -9,7 +10,10 @@ from zotero_arxiv_daily.executor import Executor
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 dotenv.load_dotenv()
 
-@hydra.main(version_base=None, config_path="../../config", config_name="default")
+CONFIG_PATH = str(Path(__file__).resolve().parents[2] / "config")
+
+
+@hydra.main(version_base=None, config_path=CONFIG_PATH, config_name="default")
 def main(config:DictConfig):
     # Configure loguru log level based on config
     log_level = "DEBUG" if config.executor.debug else "INFO"
