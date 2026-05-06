@@ -31,4 +31,4 @@ jobs:
           printf "%b\n" "$CUSTOM_CONFIG" > config/custom.yaml
           echo "Use custom config: "
           cat config/custom.yaml
-          uv run zotero-arxiv-daily
+          uv run python -m zotero_arxiv_daily.main
